@@ -1,9 +1,9 @@
 import { View, Text, ScrollView, Image, StyleSheet } from "react-native";
 import React from "react";
 import { ThemedView } from "../ThemedView";
-import { DeviceWidth } from "@/app/(tabs)";
 import { ThemedText } from "../ThemedText";
 import { Colors } from "@/constants/Colors";
+import { DeviceWidth } from "@/constants/Utils";
 
 export default function CategorySection({ data }: { data: Array<any> }) {
   return (

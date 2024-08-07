@@ -21,11 +21,9 @@ import {
 import { Colors } from "@/constants/Colors";
 import CategorySection from "@/components/Home/CategorySection";
 
-export const DeviceHeight = Dimensions.get("screen").height;
-export const DeviceWidth = Dimensions.get("screen").width;
-
 import Ionicons from "@expo/vector-icons/Ionicons";
 import QuestionSection from "@/components/Home/QuestionSection";
+import { DeviceHeight, DeviceWidth } from "@/constants/Utils";
 
 const data = [
   { label: "cricket", image: require("@/assets/images/instagramColoured.png") },
@@ -45,13 +43,42 @@ const data = [
   { label: "chess", image: require("@/assets/images/instagramColoured.png") },
 ];
 
+const matchData = [
+  {
+    question: "Kolkata to win the match vs Mumbai",
+    description: "H2H last 5 T20: Kolkata 4, Mumbai 1, Draw: 0",
+    image: require("@/assets/images/ipl.png"),
+  },
+  {
+    question: "Delhi to win the match vs Chennai",
+    description: "H2H last 5 T20: Delhi 3, Chennai 2, Draw: 0",
+    image: require("@/assets/images/ipl.png"),
+  },
+  {
+    question: "Bangalore to win the match vs Hyderabad",
+    description: "H2H last 5 T20: Bangalore 2, Hyderabad 3, Draw: 0",
+    image: require("@/assets/images/ipl.png"),
+  },
+  {
+    question: "Punjab to win the match vs Rajasthan",
+    description: "H2H last 5 T20: Punjab 1, Rajasthan 4, Draw: 0",
+    image: require("@/assets/images/ipl.png"),
+  },
+  {
+    question: "Kolkata to win the match vs Delhi",
+    description: "H2H last 5 T20: Kolkata 3, Delhi 2, Draw: 0",
+    image: require("@/assets/images/ipl.png"),
+  },
+];
+
 export default function HomeScreen() {
   const insets = useSafeAreaInsets();
   console.log("--- DeviceWidth---- ", DeviceWidth);
   const screenHeight = DeviceHeight - insets.top;
   return (
     <SafeAreaView
-    // style={{ backgroundColor: "#F7F7FF" }}
+      style={{ height: DeviceHeight }}
+      // style={{ backgroundColor: "#F7F7FF" }}
     >
       <Header />
       {/* banner section */}
@@ -122,7 +149,7 @@ export default function HomeScreen() {
         <ThemedText style={styles.trendingText}>Trending Now</ThemedText>
       </ThemedView>
       <CategorySection data={data} />
-      <QuestionSection data={data} />
+      <QuestionSection data={matchData} />
     </SafeAreaView>
   );
 }
